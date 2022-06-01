@@ -12,12 +12,12 @@ public class AnimalShelter {
         int dogs = animal(dog, coast, period, amount);
         int catfeed = feed(cat, weight, period, amount);
         int dotffed = feed(dog, weight, period, amount);
-        System.out.println("cat=" + cats+("$/m"));
-        System.out.println("dog=" + dogs+("$/m"));
-        System.out.println("sum=" +(cats+dogs)+("$/m"));
-        System.out.println("cat="+catfeed +("g/m"));
-        System.out.println("dog+"+dotffed+("g/m"));
-        System.out.println("sum="+(catfeed+dotffed)+("g/m"));
+        System.out.println("cat=" + cats + ("$/m"));
+        System.out.println("dog=" + dogs + ("$/m"));
+        System.out.println("sum=" + (cats + dogs) + ("$/m"));
+        System.out.println("cat=" + catfeed + ("g/m"));
+        System.out.println("dog+" + dotffed + ("g/m"));
+        System.out.println("sum=" + (catfeed + dotffed) + ("g/m"));
     }
 
     public static int animal(int animal, int coast, int period, int amount) {
