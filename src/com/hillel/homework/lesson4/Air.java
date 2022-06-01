@@ -1,8 +1,6 @@
 package com.hillel.homework.lesson4;
 
-import java.lang.reflect.Array;
-
-public class air {
+public class Air {
 
 
     public static void main(String[] args) {
