@@ -1,6 +1,6 @@
 package com.hillel.homework.lesson3;
 
-public class Snow {
+public class Snowman {
     public static void main(String[] args) {
 
         float x = 0.2f;
