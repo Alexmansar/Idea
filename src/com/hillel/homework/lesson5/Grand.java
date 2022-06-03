@@ -8,33 +8,58 @@ public class Grand {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter math grade : ");
-        int gradeMath = Integer.parseInt(reader.readLine());
+        Integer gradeMath = getGrade(reader);
+        if (getMessage(gradeMath)) return;
         System.out.println("Enter physics grade : ");
-        int gradePhysics = Integer.parseInt(reader.readLine());
+        Integer gradePhysics = getGrade(reader);
+        if (getMessage(gradePhysics)) return;
         System.out.println("Enter chemistry grade : ");
-        int gradeChemistry = Integer.parseInt(reader.readLine());
+        Integer gradeChemistry = getGrade(reader);
+        if (getMessage(gradeChemistry)) return;
         System.out.println("Enter geography grade : ");
-        int gradeGeography = Integer.parseInt(reader.readLine());
+        Integer gradeGeography = getGrade(reader);
+        if (getMessage(gradeGeography)) return;
         System.out.println("Enter biology grade: ");
-        int gradeBiology = Integer.parseInt(reader.readLine());
+        Integer gradeBiology = getGrade(reader);
+        if (getMessage(gradeBiology)) return;
         System.out.println("Grade math:" + gradeMath);
         System.out.println("Grade physics:" + gradePhysics);
         System.out.println("Grade chemistry:" + gradeChemistry);
         System.out.println("Grade geography:" + gradeGeography);
         System.out.println("Grade biology:" + gradeBiology);
-        int numberLesson = 5;
-        float averageRating = (float) (gradeMath + gradePhysics + gradeChemistry + gradeGeography + gradeBiology) / numberLesson;
-        System.out.println("Average rating = " + averageRating);
+        float averageRating = getAverageRating(gradeMath, gradePhysics, gradeChemistry, gradeGeography, gradeBiology);
+        getMessageGrade(averageRating, 0, 8, 10, 12);
+    }
 
-        if (averageRating >= 0 && averageRating <= 8) {
+    private static boolean getMessage(Integer grade) {
+        if (grade <= 0 || grade > 12) {
+            System.out.println("Grade was entered incorrectly, please resend. Valid value from 0 to 12. Thank you!");
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean getMessageGrade(float averageRating, int min, int intermediateVar1, int intermediateVar2, int max) {
+        if (averageRating >= min && averageRating <= intermediateVar1) {
             System.out.println("You don't get a grand");
-
-        } else if (averageRating > 8 && averageRating <= 10) {
+        } else if (averageRating > intermediateVar1 && averageRating <= intermediateVar2) {
             System.out.println("You get a grand");
-        } else if (averageRating > 10 && averageRating <= 12) {
+        } else if (averageRating > intermediateVar2 && averageRating <= max) {
             System.out.println("Congratulation, you get a presidential grand!");
         } else
             System.out.println("Check the correctness of entering grades!");
+        return false;
     }
 
+    private static float getAverageRating(int gradeMath, int gradePhysics, int gradeChemistry, int gradeGeography,
+                                          int gradeBiology) {
+        int numberLesson = 5;
+        float averageRating = (float) (gradeMath + gradePhysics + gradeChemistry + gradeGeography + gradeBiology) / numberLesson;
+        System.out.println("Average rating = " + averageRating);
+        return averageRating;
+    }
+
+    private static Integer getGrade(BufferedReader reader) throws IOException {
+        return Integer.parseInt(reader.readLine());
+    }
 }
