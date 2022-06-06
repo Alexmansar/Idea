@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 
 public class IfElse {
     public static void main(String[] args) throws IOException {
-
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("inter a number: ");
         int number = Integer.parseInt(reader.readLine());
@@ -22,8 +20,5 @@ public class IfElse {
         } else {
             System.out.println("Else");
         }
-
     }
-
-
 }

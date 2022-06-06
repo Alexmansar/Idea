@@ -14,14 +14,10 @@ public class MinValue {
         System.out.println("Minimize value is= " + findMin(a, b, c));
 
         System.out.println("Enter 3 any values : ");
-        int val1 = getValue();
-
-        int val2 = getValue();
-
-        int val3 = getValue();
+        double val1 = getValue();
+        double val2 = getValue();
+        double val3 = getValue();
         System.out.println("Minimize value is= " + findMin(val1, val2, val3));
-
-
     }
 
     public static double findMin(double a, double b, double c) {
@@ -35,9 +31,9 @@ public class MinValue {
         return a;
     }
 
-    private static Integer getValue() throws IOException {
+    public static Double getValue() throws IOException {
         System.out.println("Input number");
-        return Integer.parseInt(READER.readLine());
+        return Double.parseDouble(READER.readLine());
     }
 
 }
