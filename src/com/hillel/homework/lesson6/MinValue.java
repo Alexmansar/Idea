@@ -25,10 +25,8 @@ public class MinValue {
             return a;
         } else if (b < c && b < a) {
             return b;
-        } else if (c < a && c < b) {
-            return c;
         }
-        return a;
+        return c;
     }
 
     public static Double getValue() throws IOException {

@@ -50,6 +50,9 @@ public class Calculate {
                 break;
             case '/':
                 result = number1 / number2;
+                if (number1==0); {
+                System.out.println("Error. Cann't divide by zero!");
+            }
                 break;
             default:
                 System.out.println("Error");
