@@ -9,19 +9,19 @@ public class Grand {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter math grade : ");
         Integer gradeMath = getGrade(reader);
-        if (getMessage(gradeMath)) return;
+        if (isValid(gradeMath)) return;
         System.out.println("Enter physics grade : ");
         Integer gradePhysics = getGrade(reader);
-        if (getMessage(gradePhysics)) return;
+        if (isValid(gradePhysics)) return;
         System.out.println("Enter chemistry grade : ");
         Integer gradeChemistry = getGrade(reader);
-        if (getMessage(gradeChemistry)) return;
+        if (isValid(gradeChemistry)) return;
         System.out.println("Enter geography grade : ");
         Integer gradeGeography = getGrade(reader);
-        if (getMessage(gradeGeography)) return;
+        if (isValid(gradeGeography)) return;
         System.out.println("Enter biology grade: ");
         Integer gradeBiology = getGrade(reader);
-        if (getMessage(gradeBiology)) return;
+        if (isValid(gradeBiology)) return;
         System.out.println("Grade math:" + gradeMath);
         System.out.println("Grade physics:" + gradePhysics);
         System.out.println("Grade chemistry:" + gradeChemistry);
@@ -32,7 +32,7 @@ public class Grand {
         printMessageGrade(averageRating, 8, 10);
     }
 
-    private static boolean getMessage(Integer grade) {
+    private static boolean isValid (Integer grade) {
         if (grade <= 0 || grade > 12) {
             System.out.println("Grade was entered incorrectly, please resend. Valid value from 0 to 12. Thank you!");
             return true;
@@ -41,17 +41,12 @@ public class Grand {
     }
 
     private static void printMessageGrade(float averageRating, int min, int max) {
-        if (averageRating >= max) {// && averageRating <= intermediateVar1) {
+        if (averageRating >= max) {
             System.out.println("Congratulation, you get a presidential grand!");
-            //System.out.println("You don't get a grand");
-        } else if (averageRating <= min) {// && averageRating <= intermediateVar2) {
-            //System.out.println("You get a grand");
+        } else if (averageRating <= min) {
             System.out.println("You don't get a grand");
-            //} else if (averageRating > intermediateVar2 && averageRating <= max) {
-            //  System.out.println("Congratulation, you get a presidential grand!");
         } else
             System.out.println("You get a grand");
-        //System.out.println("Check the correctness of entering grades!");
     }
 
     private static float getAverageRating(int gradeMath, int gradePhysics, int gradeChemistry, int gradeGeography,

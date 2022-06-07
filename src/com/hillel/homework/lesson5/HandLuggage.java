@@ -8,30 +8,25 @@ public class HandLuggage {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter length,sm  : ");
-        int length = Integer.parseInt(reader.readLine());
+        Integer length = getSize(reader);
         System.out.println("Enter height, sm : ");
-        int heigth = Integer.parseInt(reader.readLine());
+        Integer height = getSize(reader);
         System.out.println("Enter width, sm  : ");
-        int width = Integer.parseInt(reader.readLine());
-        System.out.println("Enter 1 (suitcase) or (2) bag : ");
-        int lug = Integer.parseInt(reader.readLine());
-        if (lug == 1) {
-            System.out.println("Your choice is Suitcase");
+        Integer width = getSize(reader);
+        getMes(length, height, width);
+    }
+
+    private static void getMes(Integer length, Integer height, Integer width) {
+        if (length <= 40 && height <= 53 && width <= 22) {
+            System.out.println("You can take you luggage");
+        } else if (length <= 55 && height <= 40 && width <= 20) {
+            System.out.println("You can take you luggage");
         } else {
-            System.out.println("Your choice is Bag");
+            System.out.println("You cann't take you luggage");
         }
-        if (lug == 1) {
-            if (lug == 1 && length <= 40 && heigth <= 53 && width <= 22) {
-                System.out.println("You can take you Suitcase");
-            } else {
-                System.out.println("You cann't take you Suitcase");
-            }
-        } else {
-            if (lug == 2 && length <= 55 && heigth <= 40 && width <= 20) {
-                System.out.println("You can take you Bag");
-            } else {
-                System.out.println("You cann't take you Bag");
-            }
-        }
+    }
+
+    private static Integer getSize(BufferedReader reader) throws IOException {
+        return Integer.parseInt(reader.readLine());
     }
 }
