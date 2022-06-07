@@ -12,9 +12,9 @@ public class Apples {
         int bigJar = 5;
         int mediumJar = 3;
         int smallJar = 1;
-        int big = printApple(apple, bigJar);
-        int medium = printApple(getRemain(apple, big, bigJar), mediumJar);
-        int small = printApple(getSmallJar(apple, big, bigJar, medium, mediumJar), smallJar);
+        int big = findApple(apple, bigJar);
+        int medium = findApple(getRemain(apple, big, bigJar), mediumJar);
+        int small = findApple(getSmallJar(apple, big, bigJar, medium, mediumJar), smallJar);
         System.out.println("Big =" + big);
         System.out.println("Medium =" + medium);
         System.out.println("Small= " + small);
@@ -26,7 +26,7 @@ public class Apples {
         return Integer.parseInt(READER.readLine());
     }
 
-    public static int printApple(int apples, int remain1) {
+    public static int  findApple(int apples, int remain1) {
         return apples / remain1;
     }
 
