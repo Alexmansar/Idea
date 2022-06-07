@@ -1,7 +1,5 @@
 package com.hillel.homework.lesson6;
 
-import com.sun.source.tree.BreakTree;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,21 +20,15 @@ public class Apples {
         System.out.println("Small= " + small);
     }
 
+
     private static Integer getApple(BufferedReader READER) throws IOException {
         System.out.println("Enter the number of apples");
         return Integer.parseInt(READER.readLine());
     }
 
     public static int printApple(int apples, int remain1) {
-        int result1 = apples / remain1;
-        int result2 = (apples % remain1);
-        int a;
-        if (result2 > 0) {
-            a = result1;
-        } else a = result1;
-        return a;
+        return apples / remain1;
     }
-
 
     public static int getSmallJar(int apples, int remainForBig, int multiplicityBig, int remainForMedium, int multiplicityMedium) {
         return apples - (remainForBig * multiplicityBig) - (remainForMedium * multiplicityMedium);
