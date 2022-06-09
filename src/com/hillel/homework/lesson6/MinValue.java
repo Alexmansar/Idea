@@ -21,9 +21,9 @@ public class MinValue {
     }
 
     public static double findMin(double a, double b, double c) {
-        if (a < b && a < c) {
+        if (a <= b && a <= c) {
             return a;
-        } else if (b < c && b < a) {
+        } else if (b <= c && b <= a) {
             return b;
         }
         return c;
