@@ -6,7 +6,7 @@ public class ExcludeNumber {
         int b = 9;
 
         for (int i = 0; i < 100; i++) {
-            if (i != a && i != b && i / 10 != a && i / 10 != b && i %10 != a && i %10 != b) {
+            if ( i / 10 != a && i / 10 != b && i %10 != a && i %10 != b) {
                 System.out.println("i= " + i);
                 continue;
 

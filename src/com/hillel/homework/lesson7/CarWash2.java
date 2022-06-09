@@ -11,14 +11,14 @@ public class CarWash2 {
         int dirtyCar = getCarNumber();
         check(dirtyCar);
         int i = 0;
-        while (i == dirtyCar) {
-            i += i;
+        while (dirtyCar > i) {
+            i += 1;
             washCar(i);
             latherCar(i);
             dryCar(i);
-            if (i == dirtyCar) {
-                System.out.println("Congratulation, all cars is clear!");
-            }
+        }
+        if (i != 0 && i == dirtyCar) {
+            System.out.println("Congratulation, all cars is clear!");
         }
     }
 
@@ -39,8 +39,10 @@ public class CarWash2 {
         System.out.println("Dry the car № " + car);
     }
 
+
     public static void check(int car) { //проводим валидацию входного значения
         if (car > 0) {
+            boolean b = true;
         } else System.out.println("You wrong. Number of cars Value might by more than 0 ");
     }
 }
