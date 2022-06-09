@@ -14,10 +14,8 @@ public class CarWash1 {
             washCar(i);
             latherCar(i);
             dryCar(i);
-            if (i == dirtyCar) {
-                System.out.println("Congratulation, all cars is clear!");
-            }
         }
+        System.out.println("Congratulation, all cars is clear!");
     }
 
     public static int getCarNumber() throws IOException {

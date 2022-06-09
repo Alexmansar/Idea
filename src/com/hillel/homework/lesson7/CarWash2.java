@@ -17,9 +17,8 @@ public class CarWash2 {
             latherCar(i);
             dryCar(i);
         }
-        if (i != 0 && i == dirtyCar) {
-            System.out.println("Congratulation, all cars is clear!");
-        }
+
+        System.out.println("Congratulation, all cars is clear!");
     }
 
     public static int getCarNumber() throws IOException {

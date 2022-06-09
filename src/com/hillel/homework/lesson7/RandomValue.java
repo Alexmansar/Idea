@@ -13,7 +13,7 @@ public class RandomValue {
         int randomNumber = (int) (Math.random() * 10);
         do {
             userNumber = getUserNumber();
-            check(userNumber);
+            if (check(userNumber)) return;
             if (randomNumber == userNumber) {
                 System.out.println("Congratulation");
             } else {
@@ -29,10 +29,12 @@ public class RandomValue {
         return Integer.parseInt(a);
     }
 
-    public static void check (int a) { //проходим валидацию чисел
-        if (a >= 0 && a <= 10) {
-            boolean b = true;
-        } else System.out.println("You wrong. Value might by 0 to 10");
+    private static boolean check(Integer grade) {
+        if (grade < 0 || grade > 10) {
+            System.out.println("You wrong. Value might by 0 to 10");
+            return true;
+        }
+        return false;
     }
 
     public static void getMessage() { //вывод сообщения на консоль
