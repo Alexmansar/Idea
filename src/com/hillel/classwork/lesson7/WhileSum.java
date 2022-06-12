@@ -11,10 +11,6 @@ public class WhileSum {
 
     public static void main(String[] args) throws IOException {
 
-        /**
-         * Считывать с консоли числа, пока пользователь не напишет слово сумма
-         * После ввода слова сумма, нужно вывести в консоль сумму всех введенных чисел
-         */
         String input = READER.readLine();
         int sum = 0;
         while (!input.equalsIgnoreCase("sum")) {
