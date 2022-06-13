@@ -11,7 +11,8 @@ public class Palindrome {
     public static void main(String[] args) throws IOException {
         System.out.println("Enter a sentence or word");
         String input = READER.readLine().replaceAll("\\s+", "");
-        System.out.println("It is a palindrome? - " + checkPalindrome(input));
+        //String message=checkPalindrome(input)
+        System.out.println(checkPalindrome(input)? "Yes, it is a palindrome":"No, it is not a palindrome");
     }
 
     public static boolean checkPalindrome(String string) {
