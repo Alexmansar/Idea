@@ -2,41 +2,45 @@ package com.hillel.homework.lesson8;
 
 public class FootballTeam {
     public static void main(String[] args) {
-        int player=11;
-        int[] ageTeam1 = new int[player];
-        int[] ageTeam2 = new int[player];
+        int players = 11;
+        int teamNumber1 = 1;
+        int teamNumber2 = 2;
         int minAge = 18;
         int maxAge = 45;
-        generateAge(ageTeam1, minAge, maxAge, 1);
-        generateAge(ageTeam2, minAge, maxAge, 2);
-        int averageAgeTeam1 = calcAverageAge(ageTeam1, 1);
-        int averageAgeTeam2 = calcAverageAge(ageTeam2, 2);
+        System.out.print("Age " + teamNumber1 + " team is: ");
+        int[] agesTeam1 = generateAge(players, minAge, maxAge);
+        System.out.println();
+        System.out.print("Age " + teamNumber2 + "  team is: ");
+        int[] agesTeam2 = generateAge(players, minAge, maxAge);
+        double averageAgeTeam1 = calcAverageAge(agesTeam1, teamNumber1);
+        double averageAgeTeam2 = calcAverageAge(agesTeam2, teamNumber2);
+        System.out.println();
+        System.out.println("Average age of team number " + teamNumber1 + " is " + averageAgeTeam1 / agesTeam1.length);
+        System.out.println("Average age of team number " + teamNumber2 + " is " + averageAgeTeam2 / agesTeam2.length);
         calcLargerAverageAge(averageAgeTeam1, averageAgeTeam2);
     }
 
-    private static void generateAge(int[] ageTeam1, int minAge, int maxAge, int teamNumber) {
-        System.out.println();
-        System.out.println("Age " + teamNumber + " team");
-        for (int i = 0; i < ageTeam1.length; i++) {
+    private static int[] generateAge(int players, int minAge, int maxAge) {
+
+        int[] ageTeam = new int[players];
+        for (int i = 0; i < ageTeam.length; i++) {
             int age = (int) (Math.random() * (maxAge - minAge) + minAge);
-            ageTeam1[i] = age;
+            ageTeam[i] = age;
+
             System.out.print(age + ", ");
         }
+        return ageTeam;
     }
 
-    public static int calcAverageAge(int[] age, int teamNumber) {
-        int a = 0;
+    public static double calcAverageAge(int[] age, int teamNumber) {
+        int averageAge = 0;
         for (int j : age) {
-            a = a + j;
+            averageAge = averageAge + j;
         }
-        System.out.println();
-        System.out.print("Average age of team number " + teamNumber + " is " + a / age.length);
-        return a;
-
+        return averageAge;
     }
 
-    public static void calcLargerAverageAge(int averageAge1, int averageAge2) {
-        System.out.println();
+    public static void calcLargerAverageAge(double averageAge1, double averageAge2) {
         if (averageAge1 > averageAge2) {
             System.out.println("Average age of the first team is larger then second team ");
         } else if (averageAge2 > averageAge1) {
@@ -44,7 +48,5 @@ public class FootballTeam {
         } else {
             System.out.println("The average age of the teams is the same");
         }
-
     }
-
 }

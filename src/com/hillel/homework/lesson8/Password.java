@@ -1,10 +1,6 @@
 package com.hillel.homework.lesson8;
 
-import com.hillel.classwork.lesson8.Array;
-
 import java.util.Arrays;
-
-import static java.lang.String.*;
 
 public class Password {
     public static void main(String[] args) {
@@ -29,7 +25,7 @@ public class Password {
         int q2 = (int) ((Math.random()) * 10);
         int q3 = (int) ((Math.random()) * 10);
         int q4 = (int) ((Math.random()) * 10);
-        int count2=0;
+        int count2 = 0;
         int[] num = {q1, q2, q3, q4};
         System.out.println(Arrays.toString(num));
         for (int k : num)
