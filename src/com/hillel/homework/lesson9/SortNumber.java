@@ -12,7 +12,7 @@ public class SortNumber {
         print("Enter array size");
         int arraySize = getNumber();
         print("Enter " + arraySize + " numbers");
-        int[] numbers = extracted(arraySize);
+        int[] numbers = fillArray(arraySize);
         print("Enter searching number");
         int checkNumber = getNumber();
         int[] sortNumbers = sortArray(numbers);
@@ -58,7 +58,7 @@ public class SortNumber {
         numbers[i] = numbers2[j];
         numbers[j] = numbers2[i];
     }
-    public static int[] extracted(int arraySize) throws IOException {
+    public static int[] fillArray(int arraySize) throws IOException {
         int[] numbers = new int[arraySize];
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = getNumber();

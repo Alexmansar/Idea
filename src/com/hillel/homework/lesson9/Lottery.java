@@ -13,7 +13,7 @@ public class Lottery {
         int minValue = 0;
         int maxValue = 10;
         System.out.println("Entered "+arraySize+" any numbers");
-        int[] sortUserValue = bubbleSort(extracted(arraySize, minValue, maxValue));
+        int[] sortUserValue = bubbleSort(fillAndCheck(arraySize, minValue, maxValue));
         int[] sortRandomValue = bubbleSort(generateRandom(arraySize, minValue, maxValue));
         print(Arrays.toString(sortRandomValue));
         print(Arrays.toString(sortUserValue));
@@ -43,7 +43,7 @@ public class Lottery {
         return number;
     }
 
-    public static int[] extracted(int arraySize, int minValue, int maxValue) throws IOException {
+    public static int[] fillAndCheck(int arraySize, int minValue, int maxValue) throws IOException {
         int[] numbers = new int[arraySize];
         for (int i = 0; i < numbers.length; i++) {
             int j = Integer.parseInt(READER.readLine());
