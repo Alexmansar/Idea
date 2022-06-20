@@ -18,7 +18,6 @@ public class SortNumber {
         int[] sortNumbers = sortArray(numbers);
         int index = 0;
         int count = 0;
-        print("Not found");
         print("Your array is: " + Arrays.toString(sortNumbers));
         substitutionValue(checkNumber, sortNumbers, index, count);
         print("New arrays with moved value " + Arrays.toString(sortNumbers));
@@ -53,11 +52,13 @@ public class SortNumber {
         }
         return numbers;
     }
+
     public static void getNumber(int[] numbers, int i, int j) {
         int[] numbers2 = Arrays.copyOf(numbers, numbers.length);
         numbers[i] = numbers2[j];
         numbers[j] = numbers2[i];
     }
+
     public static int[] fillArray(int arraySize) throws IOException {
         int[] numbers = new int[arraySize];
         for (int i = 0; i < numbers.length; i++) {
@@ -65,6 +66,7 @@ public class SortNumber {
         }
         return numbers;
     }
+
     public static void print(String str) {
         System.out.println(str);
     }
