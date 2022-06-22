@@ -34,6 +34,4 @@ public class HelperArrays {
             System.out.println();
         }
     }
-
-
 }
