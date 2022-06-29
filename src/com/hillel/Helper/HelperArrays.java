@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class HelperArrays {
-    public static final BufferedReader READER=new BufferedReader(new InputStreamReader(System.in));
+    public static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
+
     public static void main(String[] args) {
     }
     public static void print(String str) {
@@ -22,6 +23,15 @@ public class HelperArrays {
                 int value = (int) (Math.random() * (maxValue - minValue) + minValue);
                 numbers[i][j] = value;
             }
+        }
+        return numbers;
+    }
+
+    public static int[] generateRandom(int numberOfArray, int minValue, int maxValue) {
+        int[] numbers = new int[numberOfArray];
+        for (int i = 0; i < numbers.length; i++) {
+            int value = (int) (Math.random() * (maxValue - minValue) + minValue);
+            numbers[i] = value;
         }
         return numbers;
     }
