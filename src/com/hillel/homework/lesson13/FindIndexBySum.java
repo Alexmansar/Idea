@@ -1,7 +1,7 @@
 package com.hillel.homework.lesson13;
 
-import com.hillel.Helper.Helper;
-import com.hillel.Helper.HelperArrays;
+import com.hillel.helper.Helper;
+import com.hillel.helper.HelperArrays;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,14 +12,14 @@ public class FindIndexBySum {
     public static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        int minValue = 0;
+        int minValue = -10;
         int maxValue = 10;
         Helper.print("Hi, Enter number of array");
         int numberOfArray = Helper.getIntegerValue();
+        if (!isValid(numberOfArray))return;
         int[] array = HelperArrays.generateRandom(numberOfArray, minValue, maxValue);
         int[] sortArray = sortArray(array);
         HelperArrays.print(Arrays.toString(sortArray));
-        if (isValid(numberOfArray)) return;
         Helper.print("Enter number to find");
         int numberToFind = Helper.getIntegerValue();
         if (isValid(numberToFind, minValue, maxValue)) return;
@@ -27,7 +27,7 @@ public class FindIndexBySum {
     }
 
     public static boolean isValid(int numberToFind, int minValue, int maxValue) {
-        if (numberToFind <= minValue || numberToFind >= 2 * maxValue + 1) {
+        if (numberToFind <= 2 * minValue - 1 || numberToFind >= 2 * maxValue + 1) {
             System.out.println("You wrong. You mast entered value from " + minValue + " to " + (2 * maxValue));
         } else {
             return false;
@@ -37,11 +37,9 @@ public class FindIndexBySum {
 
     public static boolean isValid(int numberOfArray) {
         if (numberOfArray <= 0) {
-            System.out.println("You wrong. You mast entered value more than 0");
-        } else {
-            return false;
+            //System.out.println("You wrong. You mast entered value more than 0".Can again);
         }
-        return true;
+        return numberOfArray > 0;
     }
 
     public static void findSearchNumber(int[] array, int numberToSearch) {

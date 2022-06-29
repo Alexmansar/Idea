@@ -1,6 +1,6 @@
 package com.hillel.homework.lesson12;
 
-import com.hillel.Helper.Helper;
+import com.hillel.helper.Helper;
 
 import java.io.IOException;
 

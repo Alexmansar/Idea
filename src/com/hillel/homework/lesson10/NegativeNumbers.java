@@ -1,6 +1,6 @@
 package com.hillel.homework.lesson10;
 
-import com.hillel.Helper.HelperArrays;
+import com.hillel.helper.HelperArrays;
 
 import java.io.BufferedReader;
 import java.io.IOException;

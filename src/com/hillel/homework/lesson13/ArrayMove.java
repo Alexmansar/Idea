@@ -1,7 +1,7 @@
 package com.hillel.homework.lesson13;
 
-import com.hillel.Helper.Helper;
-import com.hillel.Helper.HelperArrays;
+import com.hillel.helper.Helper;
+import com.hillel.helper.HelperArrays;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class ArrayMove {
         int numberOfArray = Helper.getIntegerValue();
         Helper.print("Enter number to move");
         int numberToMove = Helper.getIntegerValue();
-        if (isValid(numberOfArray, numberToMove)) return;
+        if (!isValid(numberOfArray, numberToMove)) return;
         int[] array = HelperArrays.generateRandom(numberOfArray, minValue, maxValue);
         Helper.print(Arrays.toString(array) + " This is an original array");
         Helper.print(Arrays.toString(moveToLeft(array, numberOfArray, numberToMove)) + " This is a left shifted array");
@@ -28,7 +28,6 @@ public class ArrayMove {
     public static boolean isValid(int numberOfArray, int numberToMove) {
         if (numberOfArray <= numberToMove || numberOfArray <= 0 || numberToMove <= 0) {
             System.out.println("You wrong.Number to move can't be more than number of array have negative value");
-        } else {
             return false;
         }
         return true;
