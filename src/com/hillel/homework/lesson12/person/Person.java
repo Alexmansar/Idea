@@ -1,10 +1,13 @@
 package com.hillel.homework.lesson12.person;
 
 public class Person {
+    private static final String[] MEN_NAMES = {"Alex", "Ben", "Maksim", "Egor", "Simon", "Liam", "Mason", "Michael"};
+    private static final String[] WOMEN_NAMES = {"Julia", "Sarah", "Kaila", "Scarlett", "Megan", "Sofia", "Olivia", "Mia"};
+    private static final String[] SURNAMES = {"Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor"};
     public static int MAN = 0;
     public static int WOMAN = 0;
-    String name;
-    String surname;
+    private final String name;
+    private final String surname;
     int age;
     int weight;
     int height;
@@ -21,50 +24,33 @@ public class Person {
     }
 
     public Person() {
-        this.name = getName();
+        this.name = generationName();
         this.surname = getSurname();
         this.age = getAge();
         this.weight = getWeight();
         this.height = getHeight();
     }
 
-    public Person(String name, String surname) {
+    public Person(String name, String surname, int weight) {
         this.name = name;
         this.surname = surname;
+        this.weight = weight;
     }
 
-    public static String getName() {
+
+    private static int generationSex() {
+        return (int) (Math.random() * 2);
+    }
+
+    public static String generationName() {
         String name = null;
-        String[] namesMan = {"Alex", "Ben", "Maksim", "Egor", "Simon", "Liam", "Mason", "Michael"};
-        String[] namesWoman = {"Julia", "Sarah", "Kaila", "Scarlett", "Megan", "Sofia", "Olivia", "Mia"};
-        int sex = (int) (Math.random() * 2);
-        int number = (int) (Math.random() * namesMan.length);
-        switch (sex) {
+        switch (generationSex()) {
             case 0 -> {
-                name = namesMan[number];
+                name = MEN_NAMES[(int) (Math.random() * MEN_NAMES.length)];
                 MAN++;
             }
             case 1 -> {
-                name = namesWoman[number];
-                WOMAN++;
-            }
-        }
-        return name;
-    }
-
-    public static String getName(int sex) {
-        String name = null;
-        String[] namesMan = {"Alex", "Ben", "Maksim", "Egor", "Simon", "Liam", "Mason", "Michael"};
-        String[] namesWoman = {"Julia", "Sarah", "Kaila", "Scarlett", "Megan", "Sofia", "Olivia", "Mia"};
-       // int sex = (int) (Math.random() * 2);
-        int number = (int) (Math.random() * namesMan.length);
-        switch (sex) {
-            case 0 -> {
-                name = namesMan[number];
-                MAN++;
-            }
-            case 1 -> {
-                name = namesWoman[number];
+                name = WOMEN_NAMES[(int) (Math.random() * WOMEN_NAMES.length)];
                 WOMAN++;
             }
         }
@@ -73,9 +59,8 @@ public class Person {
 
     public static String getSurname() {
         String surname;
-        String[] surnames = {"Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor"};
-        int number = (int) (Math.random() * surnames.length);
-        surname = surnames[number];
+        int number = (int) (Math.random() * SURNAMES.length);
+        surname = SURNAMES[number];
         return surname;
     }
 
