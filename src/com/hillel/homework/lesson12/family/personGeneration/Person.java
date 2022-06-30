@@ -34,14 +34,14 @@ public class Person {
                 ", father name is " + dad;
     }
 
-     public static int findSex(String name) {
-         int sex = 0;
-         if (name.equals("Alex") || name.equals("Ben") || name.equals("Maksim") || name.equals("Egor") || name.equals("Simon")) {
-         } else {
-             sex = 1;
-         }
-         return sex;
-     }
+    public static int findSex(String name) {
+        int sex = 0;
+        if (name.equals("Alex") || name.equals("Ben") || name.equals("Maksim") || name.equals("Egor") || name.equals("Simon")) {
+        } else {
+            sex = 1;
+        }
+        return sex;
+    }
     public static int generationSex() {
         return (int) (Math.random() * 2);
     }
@@ -76,8 +76,7 @@ public class Person {
 
     public static String getString() {
         String childName = Person.generationName();
-        //Person child = new Person(childName);
-        Person mother = new Person(createMother());
+         Person mother = new Person(createMother());
         Person father = new Person(createFather());
         Person family = new Person(childName,mother, father);
         System.out.println("N1 family is: " + family);
@@ -91,8 +90,7 @@ public class Person {
         for (int i = 1; i < names.length; i++) {
             names[i] = Person.generationName();
             int sex = Person.findSex(names[i - 1]);
-            //Person child = new Person(names[i]);
-            Person mother = new Person(createMother(sex, names[i - 1]));
+             Person mother = new Person(createMother(sex, names[i - 1]));
             Person father = new Person(createFather(sex, names[i - 1]));
             Person family = new Person(names[i], mother, father);
             System.out.println("N" + (i + 1) + " family is: " + family);

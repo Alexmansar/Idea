@@ -1,7 +1,7 @@
 package com.hillel.homework.lesson12.family.personGeneration;
 
 import com.hillel.helper.Helper;
-import com.hillel.homework.lesson12.family.personGeneration.Person;
+
 
 import java.io.IOException;
 
