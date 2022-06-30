@@ -1,4 +1,4 @@
-package com.hillel.homework.lesson12;
+package com.hillel.homework.lesson12.person;
 
 public class Person {
     public static int MAN = 0;

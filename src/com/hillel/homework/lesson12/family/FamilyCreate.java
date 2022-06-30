@@ -1,4 +1,4 @@
-package com.hillel.homework.lesson12;
+package com.hillel.homework.lesson12.family;
 
 import com.hillel.helper.Helper;
 
@@ -16,27 +16,23 @@ public class FamilyCreate {
         String motherName = Helper.getString();
         Helper.print("Enter father name");
         String fatherName = Helper.getString();
-        Family child = new Family(childName);
-        Family mother = new Family(motherName);
-        Family father = new Family(fatherName);
-        Family family = new Family(child, mother, father);
-
+        Person mother = new Person(motherName);
+        Person father = new Person(fatherName);
+        Person family = new Person(childName, mother, father);
 
         System.out.println("First family is:" + family);
-
-        Family child2 = new Family(Family.getName());
-        Family mother2 = new Family(createMother());
-        Family father2 = new Family(createFather());
-        Family family2 = new Family(child2, mother2, father2);
+        Person mother2 = new Person(createMother());
+        Person father2 = new Person(createFather());
+        Person family2 = new Person(Person.generationName(), mother2, father2);
         System.out.println("Second family is:" + family2);
 
     }
 
     private static String createFather() {
-        return Family.getName(0);
+        return Person.generationName(0);
     }
 
     private static String createMother() {
-        return Family.getName(1);
+        return Person.generationName(1);
     }
 }
