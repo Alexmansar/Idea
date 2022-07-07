@@ -1,4 +1,4 @@
-package com.hillel.homework.lesson15.temperatureConverter.doubleConvertor;
+package com.hillel.homework.lesson15.doubleConvertor;
 
 import java.io.BufferedReader;
 import java.io.IOException;

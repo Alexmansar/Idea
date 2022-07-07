@@ -1,4 +1,4 @@
-package com.hillel.homework.lesson15.temperatureConverter.tripleConvertor;
+package com.hillel.homework.lesson15.tripleConvertor;
 
 public class Fahrenheit extends Temperature {
 

@@ -1,4 +1,4 @@
-package com.hillel.homework.lesson15.temperatureConverter.doubleConvertor;
+package com.hillel.homework.lesson15.doubleConvertor;
 
 public class Fahrenheit implements Converter {
     private static final float FAHRENHEIT_COEFFICIENT = 9 / 5f;

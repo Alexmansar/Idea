@@ -1,4 +1,4 @@
-package com.hillel.homework.lesson15.temperatureConverter.doubleConvertor;
+package com.hillel.homework.lesson15.doubleConvertor;
 
 public class Kelvin implements Converter {
     private static final float KELVIN_CONST=273.15f;
