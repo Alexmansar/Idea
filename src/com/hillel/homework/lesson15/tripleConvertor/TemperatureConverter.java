@@ -63,7 +63,7 @@ public class TemperatureConverter {
             case 13 -> {
                 temperature = Celsius.calculateTemperatureCelsiusToFahrenheit(degree, KELVIN_CONST, FAHRENHEIT_COEFFICIENT, FAHRENHEIT_CONST);
                 temperatureFrom = "C";
-                temperatureTo = "K";
+                temperatureTo = "F";
             }
             case 21 -> {
                 temperature = Kelvin.calculateTemperatureKelvinToCelsius(degree, KELVIN_CONST);
